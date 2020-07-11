@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_montreal">
+
+    <fragment
+        android:id="@+id/nav_montreal"
+        android:name="com.example.weatherapp.ui.Montreal.MontrealFragment"
+        android:label="@string/montreal"
+        tools:layout="@layout/fragment_montreal" />
+
+    <fragment
+        android:id="@+id/nav_london"
+        android:name="com.example.weatherapp.ui.London.LondonFragment"
+        android:label="@string/London"
+        tools:layout="@layout/fragment_montreal" />
+
+<!--    <fragment-->
+<!--        android:id="@+id/nav_san"-->
+<!--        android:name="com.example.weatherapp.ui.slideshow.SlideshowFragment"-->
+<!--        android:label="@string/san_francisco"-->
+<!--        tools:layout="@layout/fragment_montreal" />-->
+    <fragment
+        android:id="@+id/dubaiFragment"
+        android:name="com.example.weatherapp.ui.Dubai.DubaiFragment"
+        android:label="@string/dubai"
+        tools:layout="@layout/fragment_montreal" />
+    <fragment
+        android:id="@+id/indiaFragment"
+        android:name="com.example.weatherapp.ui.India.IndiaFragment"
+        android:label="@string/india"
+        tools:layout="@layout/fragment_montreal" />
+    <fragment
+        android:id="@+id/moskowFragment"
+        android:name="com.example.weatherapp.ui.Moskow.MoskowFragment"
+        android:label="@string/moscow"
+        tools:layout="@layout/fragment_montreal" />
+    <fragment
+        android:id="@+id/sanFranFragment"
+        android:name="com.example.weatherapp.ui.SanFran.SanFranFragment"
+        android:label="@string/san_francisco"
+        tools:layout="@layout/fragment_montreal" />
+</navigation>
