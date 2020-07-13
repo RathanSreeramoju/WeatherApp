@@ -6,11 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/drawerLayout"
-<<<<<<< HEAD
     tools:context=".activty.MainActivity">
-=======
-    tools:context=".MainActivity">
->>>>>>> 6b5f0588fd1f5a9670578feb984647e1d77cdccd
 
 
     <LinearLayout

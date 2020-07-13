@@ -119,7 +119,6 @@ public class SanFranFragment extends Fragment {
     }
 
     private void refreshUi(List<WeatherInfo> list) {
-<<<<<<< HEAD
 //        montrealBinding.cityName.setText(list.get(0).getCityName());
 //        montrealBinding.valMinTemp.setText(String.format("%.2f", Float.valueOf(list.get(0).getMinTemp())));
         montrealBinding.valMaxTemp.setText(String.format("%.2f", Float.valueOf(list.get(0).getMaxTemp()))+"-"+String.format("%.2f", Float.valueOf(list.get(0).getMinTemp())));
@@ -127,21 +126,11 @@ public class SanFranFragment extends Fragment {
 //        montrealBinding.humidity.setText(String.format(getString(R.string.humidity), list.get(0).getHumidity())+"%");
 //        montrealBinding.predictability.setText(String.format(getString(R.string.predictability), list.get(0).getPredictability())+"%");
 //        montrealBinding.ivIcon1.setImageResource(getImageDrawable(list.get(0).getWeatherStateAbbr()));
-=======
-        montrealBinding.cityName.setText(list.get(0).getCityName());
-        montrealBinding.valMinTemp.setText(String.format("%.2f", Float.valueOf(list.get(0).getMinTemp())));
-        montrealBinding.valMaxTemp.setText(String.format("%.2f", Float.valueOf(list.get(0).getMaxTemp())));
-        montrealBinding.valActualTemp.setText(String.format("%.2f", Float.valueOf(list.get(0).getActTemp())));
-        montrealBinding.humidity.setText(String.format(getString(R.string.humidity), list.get(0).getHumidity())+"%");
-        montrealBinding.predictability.setText(String.format(getString(R.string.predictability), list.get(0).getPredictability())+"%");
-        montrealBinding.ivIcon1.setImageResource(getImageDrawable(list.get(0).getWeatherStateAbbr()));
->>>>>>> 6b5f0588fd1f5a9670578feb984647e1d77cdccd
         montrealBinding.ivIcon2.setImageResource(getImageDrawable(list.get(1).getWeatherStateAbbr()));
         montrealBinding.ivIcon3.setImageResource(getImageDrawable(list.get(2).getWeatherStateAbbr()));
         montrealBinding.ivIcon4.setImageResource(getImageDrawable(list.get(3).getWeatherStateAbbr()));
         montrealBinding.ivIcon5.setImageResource(getImageDrawable(list.get(4).getWeatherStateAbbr()));
         montrealBinding.ivIcon6.setImageResource(getImageDrawable(list.get(5).getWeatherStateAbbr()));
-<<<<<<< HEAD
         montrealBinding.tvDesc1.setText(String.format(getString(R.string.test), list.get(1).getWeatherStateName()));
         montrealBinding.tvDesc2.setText(String.format(getString(R.string.test), list.get(2).getWeatherStateName()));
         montrealBinding.tvDesc3.setText(String.format(getString(R.string.test), list.get(3).getWeatherStateName()));
@@ -185,15 +174,6 @@ public class SanFranFragment extends Fragment {
     }
 
 
-=======
-        montrealBinding.tvDesc1.setText(String.format(getString(R.string.test), list.get(1).getWeatherStateName(), getDayString(list.get(1).getDate())));
-        montrealBinding.tvDesc2.setText(String.format(getString(R.string.test), list.get(2).getWeatherStateName(), getDayString(list.get(2).getDate())));
-        montrealBinding.tvDesc3.setText(String.format(getString(R.string.test), list.get(3).getWeatherStateName(), getDayString(list.get(3).getDate())));
-        montrealBinding.tvDesc4.setText(String.format(getString(R.string.test), list.get(4).getWeatherStateName(), getDayString(list.get(4).getDate())));
-        montrealBinding.tvDesc5.setText(String.format(getString(R.string.test), list.get(5).getWeatherStateName(), getDayString(list.get(5).getDate())));
-    }
-
->>>>>>> 6b5f0588fd1f5a9670578feb984647e1d77cdccd
     private String getDayString(String date) {
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
         Calendar calendar = Calendar.getInstance();
