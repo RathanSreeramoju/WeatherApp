@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/m_first"
+            android:title="Montreal Fragment" />
+
+        <item
+            android:id="@+id/m_second"
+            android:title="London Fragment" />
+
+        <item
+            android:id="@+id/m_third"
+            android:title="San Fragment" />
+
+        <item
+            android:id="@+id/m_fourth"
+            android:title="Dubai" />
+
+        <item
+            android:id="@+id/m_fifth"
+            android:title="India" />
+
+        <item
+            android:id="@+id/m_sixth"
+            android:title="Moskow" />
+
+    </group>
+
+</menu>

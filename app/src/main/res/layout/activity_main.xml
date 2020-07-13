@@ -5,8 +5,13 @@
     android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+<<<<<<< HEAD
     android:fitsSystemWindows="true"
     tools:openDrawer="start">
+=======
+    android:id="@+id/drawerLayout"
+    tools:context=".activty.MainActivity">
+>>>>>>> 14c043b...  Weather Details Screen
 
     <include
         layout="@layout/app_bar_main"
