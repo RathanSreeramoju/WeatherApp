@@ -11,6 +11,7 @@ public class WeatherInfo {
     private String weatherStateAbbr;
     private String date;
     private String weatherStateName;
+<<<<<<< HEAD
     private String windSpeed;
     private String airPressure;
 
@@ -29,6 +30,8 @@ public class WeatherInfo {
     public void setAirPressure(String airPressure) {
         this.airPressure = airPressure;
     }
+=======
+>>>>>>> 6b5f0588fd1f5a9670578feb984647e1d77cdccd
 
     public String getCityName() {
         return cityName;
