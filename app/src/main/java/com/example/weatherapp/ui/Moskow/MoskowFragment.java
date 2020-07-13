@@ -165,7 +165,7 @@ public class MoskowFragment extends Fragment {
             @Override
             public void onClick(View view) {
 
-                setCommonLayout(list,context,getDayString(list.get(1).getDate()));
+                setCommonLayout(list,context,getDayString(list.get(0).getDate()));
 
             }
         });
