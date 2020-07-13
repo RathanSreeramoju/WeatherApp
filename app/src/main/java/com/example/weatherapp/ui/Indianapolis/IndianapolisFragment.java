@@ -1,4 +1,4 @@
-package com.example.weatherapp.ui.India;
+package com.example.weatherapp.ui.Indianapolis;
 
 import android.app.Dialog;
 import android.content.Context;
@@ -40,7 +40,7 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 
-public class IndiaFragment extends Fragment {
+public class IndianapolisFragment extends Fragment {
 
     private Context context;
     private FragmentMontrealBinding montrealBinding;
@@ -48,7 +48,7 @@ public class IndiaFragment extends Fragment {
     private ContentBinding layoutBinding;
 
 
-    public IndiaFragment() {
+    public IndianapolisFragment() {
         // Required empty public constructor
     }
 
