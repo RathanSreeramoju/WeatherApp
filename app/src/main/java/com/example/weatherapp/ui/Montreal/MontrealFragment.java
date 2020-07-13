@@ -1,6 +1,9 @@
-package com.example.weatherapp.ui.Moskow;
+package com.example.weatherapp.ui.Montreal;
 
+import android.app.Dialog;
 import android.content.Context;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 
 import androidx.databinding.DataBindingUtil;
@@ -10,17 +13,21 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Toast;
 
-import com.example.weatherapp.R;
+import com.example.weatherapp.databinding.ContentBinding;
 import com.example.weatherapp.databinding.FragmentMontrealBinding;
 import com.example.weatherapp.modelpojoclass.ConsolidatedWeather;
 import com.example.weatherapp.modelpojoclass.Example;
 import com.example.weatherapp.modelpojoclass.WeatherInfo;
 import com.example.weatherapp.retrofit.GetDataService;
+import com.example.weatherapp.R;
 import com.example.weatherapp.retrofit.RetrofitClientInstance;
 import com.example.weatherapp.singletone.Constants;
 import com.example.weatherapp.singletone.ProgressDialog;
+
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -34,20 +41,25 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 
-public class MoskowFragment extends Fragment {
+public class MontrealFragment extends Fragment {
 
     private Context context;
     private FragmentMontrealBinding montrealBinding;
+    private Dialog dialogView;
+    private ContentBinding layoutBinding;
 
-    public MoskowFragment() {
+
+
+    public MontrealFragment() {
         // Required empty public constructor
     }
-
-
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        Log.d("Montreal Fragment :", "OnCreate Called!");
+
         context = getContext();
 
     }
@@ -55,6 +67,7 @@ public class MoskowFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
         Log.d("Default Fragment :", "OnCreateView Called!");
         // Inflate the layout for this fragment
         montrealBinding = DataBindingUtil.inflate(inflater,R.layout.fragment_montreal,container,false);
@@ -68,7 +81,7 @@ public class MoskowFragment extends Fragment {
             ProgressDialog.progressDialog.show();
             GetDataService service = RetrofitClientInstance.getInstance().create(GetDataService.class);
 
-            Call<Example> call = service.getMoskowWeatherDetails();
+            Call<Example> call = service.getWeatherDetails();
             System.out.println("call__" + call);
             call.enqueue(new Callback<Example>() {
                 @Override
@@ -86,6 +99,8 @@ public class MoskowFragment extends Fragment {
 
                         for (int i=0;i<conso.size();i++){
                             info = new WeatherInfo();
+                            info.setAirPressure(""+conso.get(i).getAirPressure());
+                            info.setWindSpeed(""+conso.get(i).getWindSpeed());
                             info.setWeatherStateName(conso.get(i).getWeatherStateName());//cityname
                             info.setMaxTemp(""+conso.get(i).getMaxTemp());
                             info.setMinTemp(""+conso.get(i).getMinTemp());
@@ -99,7 +114,7 @@ public class MoskowFragment extends Fragment {
 
                         }
 
-                        refreshUi(listdata);
+refreshUi(listdata);
 
                     } else {
                         Toast.makeText(context, "failure response", Toast.LENGTH_SHORT).show();
@@ -112,6 +127,7 @@ public class MoskowFragment extends Fragment {
 
                     System.out.println("In Failure :" + t.getMessage());
                     ProgressDialog.progressDialog.dismiss();
+                    Toast.makeText(context, ""+t.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
 
                 }
             });
@@ -120,11 +136,15 @@ public class MoskowFragment extends Fragment {
         }
     }
 
-    private void refreshUi(List<WeatherInfo> list) {
+    private void refreshUi(final List<WeatherInfo> list) {
+
 //        montrealBinding.cityName.setText(list.get(0).getCityName());
 //        montrealBinding.valMinTemp.setText(String.format("%.2f", Float.valueOf(list.get(0).getMinTemp())));
-        montrealBinding.valMaxTemp.setText(String.format("%.2f", Float.valueOf(list.get(0).getMaxTemp()))+"-"+String.format("%.2f", Float.valueOf(list.get(0).getMinTemp())));
-        montrealBinding.valActualTemp.setText(String.format("%.2f", Float.valueOf(list.get(0).getActTemp())));
+//        montrealBinding.valMaxTemp.setText(String.format("%.2f", Float.valueOf(list.get(0).getMaxTemp())));
+        montrealBinding.tMin.setText(String.format("%.2f", Float.valueOf(list.get(0).getMinTemp())));
+        montrealBinding.valMaxTemp.setText(String.format("%.2f", Float.valueOf(list.get(5).getMaxTemp()))+"-"+String.format("%.2f", Float.valueOf(list.get(5).getMinTemp())));
+
+        montrealBinding.valActualTemp.setText(String.format("%.2f", Float.valueOf(list.get(5).getActTemp()))+"\u2103");
 //        montrealBinding.humidity.setText(String.format(getString(R.string.humidity), list.get(0).getHumidity())+"%");
 //        montrealBinding.predictability.setText(String.format(getString(R.string.predictability), list.get(0).getPredictability())+"%");
 //        montrealBinding.ivIcon1.setImageResource(getImageDrawable(list.get(0).getWeatherStateAbbr()));
@@ -144,11 +164,122 @@ public class MoskowFragment extends Fragment {
         montrealBinding.day4.setText(getDayString(list.get(4).getDate()));
         montrealBinding.day5.setText(getDayString(list.get(5).getDate()));
 
-        montrealBinding.middle.setText(getDayString1(list.get(5).getDate()));
+        montrealBinding.middle.setText(getDayString1(list.get(0).getDate()));
 
-        montrealBinding.last.setText(getDayString2(""+list.get(5).getDate()));
+        montrealBinding.last.setText(getDayString2(""+list.get(0).getDate()));
+        //set listener on day.
+        montrealBinding.day1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                setCommonLayout(list,context,getDayString(list.get(1).getDate()));
+
+            }
+        });
+
+        montrealBinding.day2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                setCommonLayout(list,context,getDayString(list.get(2).getDate()));
+
+
+            }
+        });
+
+        montrealBinding.day3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                setCommonLayout(list,context,getDayString(list.get(3).getDate()));
+
+
+            }
+        });
+
+        montrealBinding.day4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                setCommonLayout(list,context,getDayString(list.get(4).getDate()));
+
+
+            }
+        });
+
+        montrealBinding.day5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                setCommonLayout(list,context,getDayString(list.get(5).getDate()));
+
+
+            }
+        });
     }
 
+    private void setCommonLayout(List<WeatherInfo> list, Context context, String dayString) {
+
+//        Toast.makeText(context, "dialog view", Toast.LENGTH_SHORT).show();
+        dialogView = new Dialog(context);
+        layoutBinding = DataBindingUtil.inflate(LayoutInflater.from(context),R.layout.content,null,false);
+//        layoutBinding.setActivity(RegisterFragment.this);
+        dialogView.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialogView.setContentView(layoutBinding.getRoot());
+        dialogView.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));//android.graphics.Color.TRANSPARENT
+
+        dialogView.getWindow().clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+
+        dialogView.getWindow().setLayout(
+                ViewGroup.LayoutParams.MATCH_PARENT,
+                ViewGroup.LayoutParams.WRAP_CONTENT);
+
+        dialogView.show();
+
+        dialogView.setCancelable(false);
+
+        layoutBinding.close.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialogView.dismiss();
+            }
+        });
+
+        cancelPopUp(list,context,dayString);
+    }
+
+    private void cancelPopUp(List<WeatherInfo> list, Context context, String dayString) {
+//        dialogView.dismiss();
+
+
+        if(dayString.equals("Tue")){
+            setDataToTheLayout(list,1);
+        }else if(dayString.equals("Wed")){
+            setDataToTheLayout(list,2);
+        }else if(dayString.equals("Thu")){
+            setDataToTheLayout(list,3);
+        }else if(dayString.equals("Fri")){
+            setDataToTheLayout(list,4);
+        }else if(dayString.equals("Sat")) {
+            setDataToTheLayout(list,5);
+        }
+
+    }
+
+    private void setDataToTheLayout(List<WeatherInfo> list, int position) {
+
+        layoutBinding.cityName.setText(list.get(position).getCityName());
+        layoutBinding.valMinTemp.setText(String.format("%.2f", Float.valueOf(list.get(position).getMinTemp())));
+        layoutBinding.valMaxTemp.setText(String.format("%.2f", Float.valueOf(list.get(position).getMaxTemp())));
+        layoutBinding.valActualTemp.setText(String.format("%.2f", Float.valueOf(list.get(position).getActTemp()))+"\u2103");
+
+        layoutBinding.humidity.setText(String.format(getString(R.string.airpressure), list.get(position).getAirPressure())+"%");
+        layoutBinding.predictability.setText(String.format(getString(R.string.windSpeed), list.get(position).getPredictability())+"%");
+        layoutBinding.ivIcon1.setImageResource(getImageDrawable(list.get(position).getWeatherStateAbbr()));
+
+
+
+    }
 
     private String getDayString2(String date) {
 
@@ -175,7 +306,6 @@ public class MoskowFragment extends Fragment {
         return ""+calendar.getDisplayName(Calendar.MONTH,Calendar.LONG,Locale.getDefault());
     }
 
-
     private String getDayString(String date) {
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
         Calendar calendar = Calendar.getInstance();
@@ -187,6 +317,8 @@ public class MoskowFragment extends Fragment {
         }
         return calendar.getDisplayName(Calendar.DAY_OF_WEEK, Calendar.SHORT_FORMAT, Locale.getDefault());
     }
+
+
 
     private int getImageDrawable(String abbr) {
         int resId;
@@ -227,4 +359,8 @@ public class MoskowFragment extends Fragment {
         }
         return resId;
     }
+
 }
+
+
+

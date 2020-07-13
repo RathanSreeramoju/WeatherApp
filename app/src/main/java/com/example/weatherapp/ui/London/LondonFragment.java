@@ -1,10 +1,15 @@
-package com.example.weatherapp.ui.Moskow;
+package com.example.weatherapp.ui.London;
 
 import android.content.Context;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentActivity;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
 
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -34,20 +39,20 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 
-public class MoskowFragment extends Fragment {
+public class LondonFragment extends Fragment{
 
     private Context context;
     private FragmentMontrealBinding montrealBinding;
 
-    public MoskowFragment() {
+    public LondonFragment() {
         // Required empty public constructor
     }
-
 
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         context = getContext();
 
     }
@@ -65,10 +70,10 @@ public class MoskowFragment extends Fragment {
 
     private void setRetrofit() {
         if (Constants.isNetworkAvailable(context)) {
-            ProgressDialog.progressDialog.show();
             GetDataService service = RetrofitClientInstance.getInstance().create(GetDataService.class);
+            ProgressDialog.progressDialog.show();
 
-            Call<Example> call = service.getMoskowWeatherDetails();
+            Call<Example> call = service.getLondonWeatherDetails();
             System.out.println("call__" + call);
             call.enqueue(new Callback<Example>() {
                 @Override
@@ -227,4 +232,5 @@ public class MoskowFragment extends Fragment {
         }
         return resId;
     }
+
 }

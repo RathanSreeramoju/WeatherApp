@@ -7,14 +7,18 @@
     <string name="actual_temp">Actual Temp</string>
 
     <string name="humidity">Humidity: %1$s</string>
+    <string name="airpressure">AirPressure: %1$s</string>
     <string name="predictability">Predictability: %1$s</string>
+    <string name="windSpeed">Predictability: %1$s</string>
     <string name="india">India</string>
     <string name="London">London</string>
     <string name="san_francisco">San Francisco</string>
     <string name="dubai">Dubai</string>
     <string name="moscow">Moscow</string>
     <string name="montreal">Montreal</string>
-    <string name="test">%1$s\n%2$s</string>
+<!--    <string name="test">%1$s\n%2$s</string>-->
+    <string name="test">%1$s</string>
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

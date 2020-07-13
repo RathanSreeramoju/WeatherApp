@@ -120,23 +120,58 @@ public class IndiaFragment extends Fragment {
     }
 
     private void refreshUi(List<WeatherInfo> list) {
-        montrealBinding.cityName.setText(list.get(0).getCityName());
-        montrealBinding.valMinTemp.setText(String.format("%.2f", Float.valueOf(list.get(0).getMinTemp())));
-        montrealBinding.valMaxTemp.setText(String.format("%.2f", Float.valueOf(list.get(0).getMaxTemp())));
+//        montrealBinding.cityName.setText(list.get(0).getCityName());
+//        montrealBinding.valMinTemp.setText(String.format("%.2f", Float.valueOf(list.get(0).getMinTemp())));
+        montrealBinding.valMaxTemp.setText(String.format("%.2f", Float.valueOf(list.get(0).getMaxTemp()))+"-"+String.format("%.2f", Float.valueOf(list.get(0).getMinTemp())));
         montrealBinding.valActualTemp.setText(String.format("%.2f", Float.valueOf(list.get(0).getActTemp())));
-        montrealBinding.humidity.setText(String.format(getString(R.string.humidity), list.get(0).getHumidity())+"%");
-        montrealBinding.predictability.setText(String.format(getString(R.string.predictability), list.get(0).getPredictability())+"%");
-        montrealBinding.ivIcon1.setImageResource(getImageDrawable(list.get(0).getWeatherStateAbbr()));
+//        montrealBinding.humidity.setText(String.format(getString(R.string.humidity), list.get(0).getHumidity())+"%");
+//        montrealBinding.predictability.setText(String.format(getString(R.string.predictability), list.get(0).getPredictability())+"%");
+//        montrealBinding.ivIcon1.setImageResource(getImageDrawable(list.get(0).getWeatherStateAbbr()));
         montrealBinding.ivIcon2.setImageResource(getImageDrawable(list.get(1).getWeatherStateAbbr()));
         montrealBinding.ivIcon3.setImageResource(getImageDrawable(list.get(2).getWeatherStateAbbr()));
         montrealBinding.ivIcon4.setImageResource(getImageDrawable(list.get(3).getWeatherStateAbbr()));
         montrealBinding.ivIcon5.setImageResource(getImageDrawable(list.get(4).getWeatherStateAbbr()));
         montrealBinding.ivIcon6.setImageResource(getImageDrawable(list.get(5).getWeatherStateAbbr()));
-        montrealBinding.tvDesc1.setText(String.format(getString(R.string.test), list.get(1).getWeatherStateName(), getDayString(list.get(1).getDate())));
-        montrealBinding.tvDesc2.setText(String.format(getString(R.string.test), list.get(2).getWeatherStateName(), getDayString(list.get(2).getDate())));
-        montrealBinding.tvDesc3.setText(String.format(getString(R.string.test), list.get(3).getWeatherStateName(), getDayString(list.get(3).getDate())));
-        montrealBinding.tvDesc4.setText(String.format(getString(R.string.test), list.get(4).getWeatherStateName(), getDayString(list.get(4).getDate())));
-        montrealBinding.tvDesc5.setText(String.format(getString(R.string.test), list.get(5).getWeatherStateName(), getDayString(list.get(5).getDate())));
+        montrealBinding.tvDesc1.setText(String.format(getString(R.string.test), list.get(1).getWeatherStateName()));
+        montrealBinding.tvDesc2.setText(String.format(getString(R.string.test), list.get(2).getWeatherStateName()));
+        montrealBinding.tvDesc3.setText(String.format(getString(R.string.test), list.get(3).getWeatherStateName()));
+        montrealBinding.tvDesc4.setText(String.format(getString(R.string.test), list.get(4).getWeatherStateName()));
+        montrealBinding.tvDesc5.setText(String.format(getString(R.string.test), list.get(5).getWeatherStateName() ));
+        montrealBinding.day1.setText(getDayString(list.get(1).getDate()));
+        montrealBinding.day2.setText(getDayString(list.get(2).getDate()));
+        montrealBinding.day3.setText(getDayString(list.get(3).getDate()));
+        montrealBinding.day4.setText(getDayString(list.get(4).getDate()));
+        montrealBinding.day5.setText(getDayString(list.get(5).getDate()));
+
+        montrealBinding.middle.setText(getDayString1(list.get(5).getDate()));
+
+        montrealBinding.last.setText(getDayString2(""+list.get(5).getDate()));
+    }
+
+
+    private String getDayString2(String date) {
+
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        Calendar calendar = Calendar.getInstance();
+        try {
+            Date date1 = simpleDateFormat.parse(date);
+            calendar.setTimeInMillis(date1.getTime());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return calendar.getDisplayName(Calendar.DAY_OF_WEEK, Calendar.LONG_FORMAT, Locale.getDefault());
+
+    }
+    private String getDayString1(String date) {
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        Calendar calendar = Calendar.getInstance();
+        try {
+            Date date1 = simpleDateFormat.parse(date);
+            calendar.setTimeInMillis(date1.getTime());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return ""+calendar.getDisplayName(Calendar.MONTH,Calendar.LONG,Locale.getDefault());
     }
 
     private String getDayString(String date) {
@@ -150,6 +185,7 @@ public class IndiaFragment extends Fragment {
         }
         return calendar.getDisplayName(Calendar.DAY_OF_WEEK, Calendar.SHORT_FORMAT, Locale.getDefault());
     }
+
 
     private int getImageDrawable(String abbr) {
         int resId;

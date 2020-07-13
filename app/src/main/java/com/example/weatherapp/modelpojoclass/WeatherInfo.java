@@ -11,6 +11,24 @@ public class WeatherInfo {
     private String weatherStateAbbr;
     private String date;
     private String weatherStateName;
+    private String windSpeed;
+    private String airPressure;
+
+    public String getWindSpeed() {
+        return windSpeed;
+    }
+
+    public void setWindSpeed(String windSpeed) {
+        this.windSpeed = windSpeed;
+    }
+
+    public String getAirPressure() {
+        return airPressure;
+    }
+
+    public void setAirPressure(String airPressure) {
+        this.airPressure = airPressure;
+    }
 
     public String getCityName() {
         return cityName;
