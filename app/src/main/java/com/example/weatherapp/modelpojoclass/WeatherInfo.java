@@ -11,7 +11,10 @@ public class WeatherInfo {
     private String weatherStateAbbr;
     private String date;
     private String weatherStateName;
+<<<<<<< HEAD
 
+=======
+>>>>>>> Rathan
     private String windSpeed;
     private String airPressure;
 
@@ -31,7 +34,10 @@ public class WeatherInfo {
         this.airPressure = airPressure;
     }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> Rathan
     public String getCityName() {
         return cityName;
     }

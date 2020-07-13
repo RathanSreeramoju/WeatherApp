@@ -1,9 +1,13 @@
 package com.example.weatherapp.ui.SanFran;
 
+<<<<<<< HEAD
 import android.app.Dialog;
 import android.content.Context;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+=======
+import android.content.Context;
+>>>>>>> Rathan
 import android.os.Bundle;
 
 import androidx.databinding.DataBindingUtil;
@@ -13,12 +17,18 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+<<<<<<< HEAD
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Toast;
 
 import com.example.weatherapp.R;
 import com.example.weatherapp.databinding.ContentBinding;
+=======
+import android.widget.Toast;
+
+import com.example.weatherapp.R;
+>>>>>>> Rathan
 import com.example.weatherapp.databinding.FragmentMontrealBinding;
 import com.example.weatherapp.modelpojoclass.ConsolidatedWeather;
 import com.example.weatherapp.modelpojoclass.Example;
@@ -43,8 +53,11 @@ import retrofit2.Response;
 public class SanFranFragment extends Fragment {
     private Context context;
     private FragmentMontrealBinding montrealBinding;
+<<<<<<< HEAD
     private Dialog dialogView;
     private ContentBinding layoutBinding;
+=======
+>>>>>>> Rathan
 
     public SanFranFragment() {
         // Required empty public constructor
@@ -126,6 +139,7 @@ public class SanFranFragment extends Fragment {
         }
     }
 
+<<<<<<< HEAD
     private void refreshUi(final List<WeatherInfo> list) {
 
         montrealBinding.tCity.setText(list.get(0).getCityName());
@@ -139,6 +153,16 @@ public class SanFranFragment extends Fragment {
 //        montrealBinding.ivIcon1.setImageResource(getImageDrawable(list.get(0).getWeatherStateAbbr()));
         montrealBinding.tMin.setText(String.format("%.2f", Float.valueOf(list.get(0).getMinTemp())));
         montrealBinding.tMax.setText(String.format("%.2f", Float.valueOf(list.get(0).getMaxTemp())));
+=======
+    private void refreshUi(List<WeatherInfo> list) {
+//        montrealBinding.cityName.setText(list.get(0).getCityName());
+//        montrealBinding.valMinTemp.setText(String.format("%.2f", Float.valueOf(list.get(0).getMinTemp())));
+        montrealBinding.valMaxTemp.setText(String.format("%.2f", Float.valueOf(list.get(0).getMaxTemp()))+"-"+String.format("%.2f", Float.valueOf(list.get(0).getMinTemp())));
+        montrealBinding.valActualTemp.setText(String.format("%.2f", Float.valueOf(list.get(0).getActTemp())));
+//        montrealBinding.humidity.setText(String.format(getString(R.string.humidity), list.get(0).getHumidity())+"%");
+//        montrealBinding.predictability.setText(String.format(getString(R.string.predictability), list.get(0).getPredictability())+"%");
+//        montrealBinding.ivIcon1.setImageResource(getImageDrawable(list.get(0).getWeatherStateAbbr()));
+>>>>>>> Rathan
         montrealBinding.ivIcon2.setImageResource(getImageDrawable(list.get(1).getWeatherStateAbbr()));
         montrealBinding.ivIcon3.setImageResource(getImageDrawable(list.get(2).getWeatherStateAbbr()));
         montrealBinding.ivIcon4.setImageResource(getImageDrawable(list.get(3).getWeatherStateAbbr()));
@@ -155,6 +179,7 @@ public class SanFranFragment extends Fragment {
         montrealBinding.day4.setText(getDayString(list.get(4).getDate()));
         montrealBinding.day5.setText(getDayString(list.get(5).getDate()));
 
+<<<<<<< HEAD
         montrealBinding.middle.setText(getDayString1(list.get(0).getDate()));
 
         montrealBinding.last.setText(getDayString2(""+list.get(0).getDate()));
@@ -271,6 +296,13 @@ public class SanFranFragment extends Fragment {
 
 
     }
+=======
+        montrealBinding.middle.setText(getDayString1(list.get(5).getDate()));
+
+        montrealBinding.last.setText(getDayString2(""+list.get(5).getDate()));
+    }
+
+>>>>>>> Rathan
 
     private String getDayString2(String date) {
 
@@ -297,6 +329,10 @@ public class SanFranFragment extends Fragment {
         return ""+calendar.getDisplayName(Calendar.MONTH,Calendar.LONG,Locale.getDefault());
     }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> Rathan
     private String getDayString(String date) {
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
         Calendar calendar = Calendar.getInstance();
@@ -309,8 +345,11 @@ public class SanFranFragment extends Fragment {
         return calendar.getDisplayName(Calendar.DAY_OF_WEEK, Calendar.SHORT_FORMAT, Locale.getDefault());
     }
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> Rathan
     private int getImageDrawable(String abbr) {
         int resId;
         switch (abbr) {

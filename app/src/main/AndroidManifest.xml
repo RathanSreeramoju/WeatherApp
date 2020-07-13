@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.weatherapp">
+<<<<<<< HEAD
+=======
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+>>>>>>> 14c043b...  Weather Details Screen
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -12,18 +18,33 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+<<<<<<< HEAD
         <activity android:name=".activty.WeatherDetailsAtivity">
             <!--            <intent-filter>-->
             <!--            <action android:name="android.intent.action.MAIN" />-->
 
             <!--            <category android:name="android.intent.category.LAUNCHER" />-->
             <!--        </intent-filter>-->
+=======
+<<<<<<< HEAD
+=======
+        <activity android:name=".activty.WeatherDetailsAtivity">
+<!--            <intent-filter>-->
+<!--            <action android:name="android.intent.action.MAIN" />-->
+
+<!--            <category android:name="android.intent.category.LAUNCHER" />-->
+<!--        </intent-filter>-->
+>>>>>>> Rathan
         </activity>
 
         <uses-library
             android:name="org.apache.http.legacy"
             android:required="false" />
 
+<<<<<<< HEAD
+=======
+>>>>>>> 14c043b...  Weather Details Screen
+>>>>>>> Rathan
         <activity
             android:name=".activty.MainActivity"
             android:label="@string/app_name"

@@ -1,59 +1,27 @@
-package com.example.weatherapp.ui.London;
+package com.example.weatherapp.ui.India;
 
-<<<<<<< HEAD
-import android.app.Dialog;
 import android.content.Context;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 
 import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
-=======
-import android.content.Context;
-import android.os.Bundle;
-
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.databinding.DataBindingUtil;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentActivity;
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
->>>>>>> Rathan
 
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-<<<<<<< HEAD
-import android.view.Window;
-import android.view.WindowManager;
-import android.widget.Toast;
-
-import com.example.weatherapp.databinding.ContentBinding;
-=======
 import android.widget.Toast;
 
 import com.example.weatherapp.R;
->>>>>>> Rathan
 import com.example.weatherapp.databinding.FragmentMontrealBinding;
 import com.example.weatherapp.modelpojoclass.ConsolidatedWeather;
 import com.example.weatherapp.modelpojoclass.Example;
 import com.example.weatherapp.modelpojoclass.WeatherInfo;
 import com.example.weatherapp.retrofit.GetDataService;
-<<<<<<< HEAD
-import com.example.weatherapp.R;
-=======
->>>>>>> Rathan
 import com.example.weatherapp.retrofit.RetrofitClientInstance;
 import com.example.weatherapp.singletone.Constants;
 import com.example.weatherapp.singletone.ProgressDialog;
 
-<<<<<<< HEAD
-
-=======
->>>>>>> Rathan
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -66,26 +34,19 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 
-public class LondonFragment extends Fragment{
+public class IndiaFragment extends Fragment {
 
     private Context context;
     private FragmentMontrealBinding montrealBinding;
-<<<<<<< HEAD
-    private Dialog dialogView;
-    private ContentBinding layoutBinding;
 
-=======
->>>>>>> Rathan
 
-    public LondonFragment() {
+    public IndiaFragment() {
         // Required empty public constructor
     }
-
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         context = getContext();
 
     }
@@ -106,14 +67,14 @@ public class LondonFragment extends Fragment{
             GetDataService service = RetrofitClientInstance.getInstance().create(GetDataService.class);
             ProgressDialog.progressDialog.show();
 
-            Call<Example> call = service.getLondonWeatherDetails();
+            Call<Example> call = service.getIndiaWeatherDetails();
             System.out.println("call__" + call);
             call.enqueue(new Callback<Example>() {
                 @Override
                 public void onResponse(Call<Example> call, Response<Example> response) {
+                    ProgressDialog.progressDialog.dismiss();
 
                     if (response.isSuccessful()) {
-                        ProgressDialog.progressDialog.dismiss();
                         System.out.println("Response From URL :" + response.body().toString());
                         Example list = response.body();
 
@@ -158,21 +119,6 @@ public class LondonFragment extends Fragment{
         }
     }
 
-<<<<<<< HEAD
-    private void refreshUi(final List<WeatherInfo> list) {
-
-           montrealBinding.tCity.setText(list.get(0).getCityName());
-//        montrealBinding.valMinTemp.setText(String.format("%.2f", Float.valueOf(list.get(0).getMinTemp())));
-//        montrealBinding.valMaxTemp.setText(String.format("%.2f", Float.valueOf(list.get(0).getMaxTemp())));
-        //       montrealBinding.valMaxTemp.setText(String.format("%.2f", Float.valueOf(list.get(5).getMaxTemp()))+"-"+String.format("%.2f", Float.valueOf(list.get(5).getMinTemp())));
-
-        montrealBinding.valActualTemp.setText(String.format("%.2f", Float.valueOf(list.get(5).getActTemp()))+"\u2103");
-        montrealBinding.tHum.setText(String.format(getString(R.string.humidity), list.get(0).getHumidity())+"%");
-        montrealBinding.tPre.setText(String.format(getString(R.string.predictability), list.get(0).getPredictability())+"%");
-//        montrealBinding.ivIcon1.setImageResource(getImageDrawable(list.get(0).getWeatherStateAbbr()));
-        montrealBinding.tMin.setText(String.format("%.2f", Float.valueOf(list.get(0).getMinTemp())));
-        montrealBinding.tMax.setText(String.format("%.2f", Float.valueOf(list.get(0).getMaxTemp())));
-=======
     private void refreshUi(List<WeatherInfo> list) {
 //        montrealBinding.cityName.setText(list.get(0).getCityName());
 //        montrealBinding.valMinTemp.setText(String.format("%.2f", Float.valueOf(list.get(0).getMinTemp())));
@@ -181,7 +127,6 @@ public class LondonFragment extends Fragment{
 //        montrealBinding.humidity.setText(String.format(getString(R.string.humidity), list.get(0).getHumidity())+"%");
 //        montrealBinding.predictability.setText(String.format(getString(R.string.predictability), list.get(0).getPredictability())+"%");
 //        montrealBinding.ivIcon1.setImageResource(getImageDrawable(list.get(0).getWeatherStateAbbr()));
->>>>>>> Rathan
         montrealBinding.ivIcon2.setImageResource(getImageDrawable(list.get(1).getWeatherStateAbbr()));
         montrealBinding.ivIcon3.setImageResource(getImageDrawable(list.get(2).getWeatherStateAbbr()));
         montrealBinding.ivIcon4.setImageResource(getImageDrawable(list.get(3).getWeatherStateAbbr()));
@@ -198,130 +143,11 @@ public class LondonFragment extends Fragment{
         montrealBinding.day4.setText(getDayString(list.get(4).getDate()));
         montrealBinding.day5.setText(getDayString(list.get(5).getDate()));
 
-<<<<<<< HEAD
-        montrealBinding.middle.setText(getDayString1(list.get(0).getDate()));
-
-        montrealBinding.last.setText(getDayString2(""+list.get(0).getDate()));
-        //set listener on day.
-        montrealBinding.day1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                setCommonLayout(list,context,getDayString(list.get(1).getDate()));
-
-            }
-        });
-
-        montrealBinding.day2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                setCommonLayout(list,context,getDayString(list.get(2).getDate()));
-
-
-            }
-        });
-
-        montrealBinding.day3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                setCommonLayout(list,context,getDayString(list.get(3).getDate()));
-
-
-            }
-        });
-
-        montrealBinding.day4.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                setCommonLayout(list,context,getDayString(list.get(4).getDate()));
-
-
-            }
-        });
-
-        montrealBinding.day5.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                setCommonLayout(list,context,getDayString(list.get(5).getDate()));
-
-
-            }
-        });
-    }
-
-    private void setCommonLayout(List<WeatherInfo> list, Context context, String dayString) {
-
-//        Toast.makeText(context, "dialog view", Toast.LENGTH_SHORT).show();
-        dialogView = new Dialog(context);
-        layoutBinding = DataBindingUtil.inflate(LayoutInflater.from(context),R.layout.content,null,false);
-//        layoutBinding.setActivity(RegisterFragment.this);
-        dialogView.requestWindowFeature(Window.FEATURE_NO_TITLE);
-        dialogView.setContentView(layoutBinding.getRoot());
-        dialogView.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));//android.graphics.Color.TRANSPARENT
-
-        dialogView.getWindow().clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
-
-        dialogView.getWindow().setLayout(
-                ViewGroup.LayoutParams.MATCH_PARENT,
-                ViewGroup.LayoutParams.WRAP_CONTENT);
-
-        dialogView.show();
-
-        dialogView.setCancelable(false);
-
-        layoutBinding.close.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                dialogView.dismiss();
-            }
-        });
-
-        cancelPopUp(list,context,dayString);
-    }
-
-    private void cancelPopUp(List<WeatherInfo> list, Context context, String dayString) {
-//        dialogView.dismiss();
-
-
-        if(dayString.equals("Tue")){
-            setDataToTheLayout(list,1);
-        }else if(dayString.equals("Wed")){
-            setDataToTheLayout(list,2);
-        }else if(dayString.equals("Thu")){
-            setDataToTheLayout(list,3);
-        }else if(dayString.equals("Fri")){
-            setDataToTheLayout(list,4);
-        }else if(dayString.equals("Sat")) {
-            setDataToTheLayout(list,5);
-        }
-
-    }
-
-    private void setDataToTheLayout(List<WeatherInfo> list, int position) {
-
-        layoutBinding.cityName.setText(list.get(position).getCityName());
-        layoutBinding.valMinTemp.setText(String.format("%.2f", Float.valueOf(list.get(position).getMinTemp())));
-        layoutBinding.valMaxTemp.setText(String.format("%.2f", Float.valueOf(list.get(position).getMaxTemp())));
-        layoutBinding.valActualTemp.setText(String.format("%.2f", Float.valueOf(list.get(position).getActTemp()))+"\u2103");
-
-        layoutBinding.humidity.setText(String.format(getString(R.string.airpressure), list.get(position).getAirPressure())+"%");
-        layoutBinding.predictability.setText(String.format(getString(R.string.windSpeed), list.get(position).getPredictability())+"%");
-        layoutBinding.ivIcon1.setImageResource(getImageDrawable(list.get(position).getWeatherStateAbbr()));
-
-
-
-    }
-=======
         montrealBinding.middle.setText(getDayString1(list.get(5).getDate()));
 
         montrealBinding.last.setText(getDayString2(""+list.get(5).getDate()));
     }
 
->>>>>>> Rathan
 
     private String getDayString2(String date) {
 
@@ -348,10 +174,6 @@ public class LondonFragment extends Fragment{
         return ""+calendar.getDisplayName(Calendar.MONTH,Calendar.LONG,Locale.getDefault());
     }
 
-<<<<<<< HEAD
-=======
-
->>>>>>> Rathan
     private String getDayString(String date) {
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
         Calendar calendar = Calendar.getInstance();
@@ -364,11 +186,7 @@ public class LondonFragment extends Fragment{
         return calendar.getDisplayName(Calendar.DAY_OF_WEEK, Calendar.SHORT_FORMAT, Locale.getDefault());
     }
 
-<<<<<<< HEAD
 
-
-=======
->>>>>>> Rathan
     private int getImageDrawable(String abbr) {
         int resId;
         switch (abbr) {
@@ -408,5 +226,4 @@ public class LondonFragment extends Fragment{
         }
         return resId;
     }
-
 }
