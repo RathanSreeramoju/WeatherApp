@@ -138,15 +138,17 @@ public class MontrealFragment extends Fragment {
 
     private void refreshUi(final List<WeatherInfo> list) {
 
-//        montrealBinding.cityName.setText(list.get(0).getCityName());
+        montrealBinding.tCity.setText(list.get(0).getCityName());
 //        montrealBinding.valMinTemp.setText(String.format("%.2f", Float.valueOf(list.get(0).getMinTemp())));
 //        montrealBinding.valMaxTemp.setText(String.format("%.2f", Float.valueOf(list.get(0).getMaxTemp())));
-        montrealBinding.valMaxTemp.setText(String.format("%.2f", Float.valueOf(list.get(5).getMaxTemp()))+"-"+String.format("%.2f", Float.valueOf(list.get(5).getMinTemp())));
+ //       montrealBinding.valMaxTemp.setText(String.format("%.2f", Float.valueOf(list.get(5).getMaxTemp()))+"-"+String.format("%.2f", Float.valueOf(list.get(5).getMinTemp())));
 
         montrealBinding.valActualTemp.setText(String.format("%.2f", Float.valueOf(list.get(5).getActTemp()))+"\u2103");
-//        montrealBinding.humidity.setText(String.format(getString(R.string.humidity), list.get(0).getHumidity())+"%");
-//        montrealBinding.predictability.setText(String.format(getString(R.string.predictability), list.get(0).getPredictability())+"%");
+        montrealBinding.tHum.setText(String.format(getString(R.string.humidity), list.get(0).getHumidity())+"%");
+       montrealBinding.tPre.setText(String.format(getString(R.string.predictability), list.get(0).getPredictability())+"%");
 //        montrealBinding.ivIcon1.setImageResource(getImageDrawable(list.get(0).getWeatherStateAbbr()));
+        montrealBinding.tMin.setText(String.format("%.2f", Float.valueOf(list.get(0).getMinTemp())));
+        montrealBinding.tMax.setText(String.format("%.2f", Float.valueOf(list.get(0).getMaxTemp())));
         montrealBinding.ivIcon2.setImageResource(getImageDrawable(list.get(1).getWeatherStateAbbr()));
         montrealBinding.ivIcon3.setImageResource(getImageDrawable(list.get(2).getWeatherStateAbbr()));
         montrealBinding.ivIcon4.setImageResource(getImageDrawable(list.get(3).getWeatherStateAbbr()));
@@ -163,9 +165,9 @@ public class MontrealFragment extends Fragment {
         montrealBinding.day4.setText(getDayString(list.get(4).getDate()));
         montrealBinding.day5.setText(getDayString(list.get(5).getDate()));
 
-        montrealBinding.middle.setText(getDayString1(list.get(5).getDate()));
+        montrealBinding.middle.setText(getDayString1(list.get(0).getDate()));
 
-        montrealBinding.last.setText(getDayString2(""+list.get(5).getDate()));
+        montrealBinding.last.setText(getDayString2(""+list.get(0).getDate()));
         //set listener on day.
         montrealBinding.day1.setOnClickListener(new View.OnClickListener() {
             @Override
