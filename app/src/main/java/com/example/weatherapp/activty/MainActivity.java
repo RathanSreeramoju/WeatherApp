@@ -1,5 +1,6 @@
 package com.example.weatherapp.activty;
 
+
 import android.os.Bundle;
 import android.view.MenuItem;
 
@@ -19,7 +20,7 @@ import androidx.appcompat.widget.Toolbar;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
-//implements NavigationView.OnNavigationItemSelectedListener
+    //implements NavigationView.OnNavigationItemSelectedListener
     public Toolbar toolbar;
     public DrawerLayout drawerLayout;
     public NavController navController;

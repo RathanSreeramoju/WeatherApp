@@ -29,7 +29,7 @@
         tools:layout="@layout/fragment_montreal" />
     <fragment
         android:id="@+id/indiaFragment"
-        android:name="com.example.weatherapp.ui.Indianapolis.IndianapolisFragment"
+        android:name="com.example.weatherapp.ui.India.IndiaFragment"
         android:label="@string/india"
         tools:layout="@layout/fragment_montreal" />
     <fragment

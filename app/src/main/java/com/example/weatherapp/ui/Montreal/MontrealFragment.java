@@ -114,11 +114,7 @@ public class MontrealFragment extends Fragment {
 
                         }
 
-<<<<<<< HEAD
                         refreshUi(listdata);
-=======
-refreshUi(listdata);
->>>>>>> Rathan
 
                     } else {
                         Toast.makeText(context, "failure response", Toast.LENGTH_SHORT).show();
@@ -142,7 +138,6 @@ refreshUi(listdata);
 
     private void refreshUi(final List<WeatherInfo> list) {
 
-<<<<<<< HEAD
         montrealBinding.tCity.setText(list.get(0).getCityName());
 //        montrealBinding.valMinTemp.setText(String.format("%.2f", Float.valueOf(list.get(0).getMinTemp())));
 //        montrealBinding.valMaxTemp.setText(String.format("%.2f", Float.valueOf(list.get(0).getMaxTemp())));
@@ -154,18 +149,6 @@ refreshUi(listdata);
 //        montrealBinding.ivIcon1.setImageResource(getImageDrawable(list.get(0).getWeatherStateAbbr()));
         montrealBinding.tMin.setText(String.format("%.2f", Float.valueOf(list.get(0).getMinTemp())));
         montrealBinding.tMax.setText(String.format("%.2f", Float.valueOf(list.get(0).getMaxTemp())));
-=======
-//        montrealBinding.cityName.setText(list.get(0).getCityName());
-//        montrealBinding.valMinTemp.setText(String.format("%.2f", Float.valueOf(list.get(0).getMinTemp())));
-//        montrealBinding.valMaxTemp.setText(String.format("%.2f", Float.valueOf(list.get(0).getMaxTemp())));
-        montrealBinding.tMin.setText(String.format("%.2f", Float.valueOf(list.get(0).getMinTemp())));
-        montrealBinding.valMaxTemp.setText(String.format("%.2f", Float.valueOf(list.get(5).getMaxTemp()))+"-"+String.format("%.2f", Float.valueOf(list.get(5).getMinTemp())));
-
-        montrealBinding.valActualTemp.setText(String.format("%.2f", Float.valueOf(list.get(5).getActTemp()))+"\u2103");
-//        montrealBinding.humidity.setText(String.format(getString(R.string.humidity), list.get(0).getHumidity())+"%");
-//        montrealBinding.predictability.setText(String.format(getString(R.string.predictability), list.get(0).getPredictability())+"%");
-//        montrealBinding.ivIcon1.setImageResource(getImageDrawable(list.get(0).getWeatherStateAbbr()));
->>>>>>> Rathan
         montrealBinding.ivIcon2.setImageResource(getImageDrawable(list.get(1).getWeatherStateAbbr()));
         montrealBinding.ivIcon3.setImageResource(getImageDrawable(list.get(2).getWeatherStateAbbr()));
         montrealBinding.ivIcon4.setImageResource(getImageDrawable(list.get(3).getWeatherStateAbbr()));

@@ -5,18 +5,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-<<<<<<< HEAD
     android:id="@+id/drawerLayout"
     tools:context=".activty.MainActivity">
-=======
-<<<<<<< HEAD
-    android:fitsSystemWindows="true"
-    tools:openDrawer="start">
-=======
-    android:id="@+id/drawerLayout"
-    tools:context=".activty.MainActivity">
->>>>>>> 14c043b...  Weather Details Screen
->>>>>>> Rathan
 
 
     <LinearLayout

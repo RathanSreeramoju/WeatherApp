@@ -1,56 +1,10 @@
 package com.example.weatherapp.ui.slideshow;
 
 import android.os.Bundle;
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.TextView;
-=======
->>>>>>> 14c043b...  Weather Details Screen
->>>>>>> Rathan
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-<<<<<<< HEAD
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
-
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-=======
-<<<<<<< HEAD
-import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProviders;
->>>>>>> Rathan
-
-import com.example.weatherapp.R;
-
-
-public class SlideshowFragment extends Fragment {
-
-<<<<<<< HEAD
-=======
-    private SlideshowViewModel slideshowViewModel;
-
-    public View onCreateView(@NonNull LayoutInflater inflater,
-                             ViewGroup container, Bundle savedInstanceState) {
-        slideshowViewModel =
-                ViewModelProviders.of(this).get(SlideshowViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_slideshow, container, false);
-        final TextView textView = root.findViewById(R.id.text_slideshow);
-        slideshowViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
-            @Override
-            public void onChanged(@Nullable String s) {
-                textView.setText(s);
-            }
-        });
-        return root;
-=======
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 
@@ -63,7 +17,6 @@ import com.example.weatherapp.R;
 
 public class SlideshowFragment extends Fragment {
 
->>>>>>> Rathan
     NavController navController;
 
     public SlideshowFragment() {
@@ -90,9 +43,5 @@ public class SlideshowFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-<<<<<<< HEAD
-=======
->>>>>>> 14c043b...  Weather Details Screen
->>>>>>> Rathan
     }
 }

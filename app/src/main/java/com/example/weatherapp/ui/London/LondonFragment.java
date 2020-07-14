@@ -1,6 +1,5 @@
 package com.example.weatherapp.ui.London;
 
-<<<<<<< HEAD
 import android.app.Dialog;
 import android.content.Context;
 import android.graphics.Color;
@@ -9,51 +8,27 @@ import android.os.Bundle;
 
 import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
-=======
-import android.content.Context;
-import android.os.Bundle;
-
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.databinding.DataBindingUtil;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentActivity;
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
->>>>>>> Rathan
 
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-<<<<<<< HEAD
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Toast;
 
 import com.example.weatherapp.databinding.ContentBinding;
-=======
-import android.widget.Toast;
-
-import com.example.weatherapp.R;
->>>>>>> Rathan
 import com.example.weatherapp.databinding.FragmentMontrealBinding;
 import com.example.weatherapp.modelpojoclass.ConsolidatedWeather;
 import com.example.weatherapp.modelpojoclass.Example;
 import com.example.weatherapp.modelpojoclass.WeatherInfo;
 import com.example.weatherapp.retrofit.GetDataService;
-<<<<<<< HEAD
 import com.example.weatherapp.R;
-=======
->>>>>>> Rathan
 import com.example.weatherapp.retrofit.RetrofitClientInstance;
 import com.example.weatherapp.singletone.Constants;
 import com.example.weatherapp.singletone.ProgressDialog;
 
-<<<<<<< HEAD
 
-=======
->>>>>>> Rathan
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -70,12 +45,9 @@ public class LondonFragment extends Fragment{
 
     private Context context;
     private FragmentMontrealBinding montrealBinding;
-<<<<<<< HEAD
     private Dialog dialogView;
     private ContentBinding layoutBinding;
 
-=======
->>>>>>> Rathan
 
     public LondonFragment() {
         // Required empty public constructor
@@ -158,7 +130,6 @@ public class LondonFragment extends Fragment{
         }
     }
 
-<<<<<<< HEAD
     private void refreshUi(final List<WeatherInfo> list) {
 
            montrealBinding.tCity.setText(list.get(0).getCityName());
@@ -172,16 +143,6 @@ public class LondonFragment extends Fragment{
 //        montrealBinding.ivIcon1.setImageResource(getImageDrawable(list.get(0).getWeatherStateAbbr()));
         montrealBinding.tMin.setText(String.format("%.2f", Float.valueOf(list.get(0).getMinTemp())));
         montrealBinding.tMax.setText(String.format("%.2f", Float.valueOf(list.get(0).getMaxTemp())));
-=======
-    private void refreshUi(List<WeatherInfo> list) {
-//        montrealBinding.cityName.setText(list.get(0).getCityName());
-//        montrealBinding.valMinTemp.setText(String.format("%.2f", Float.valueOf(list.get(0).getMinTemp())));
-        montrealBinding.valMaxTemp.setText(String.format("%.2f", Float.valueOf(list.get(0).getMaxTemp()))+"-"+String.format("%.2f", Float.valueOf(list.get(0).getMinTemp())));
-        montrealBinding.valActualTemp.setText(String.format("%.2f", Float.valueOf(list.get(0).getActTemp())));
-//        montrealBinding.humidity.setText(String.format(getString(R.string.humidity), list.get(0).getHumidity())+"%");
-//        montrealBinding.predictability.setText(String.format(getString(R.string.predictability), list.get(0).getPredictability())+"%");
-//        montrealBinding.ivIcon1.setImageResource(getImageDrawable(list.get(0).getWeatherStateAbbr()));
->>>>>>> Rathan
         montrealBinding.ivIcon2.setImageResource(getImageDrawable(list.get(1).getWeatherStateAbbr()));
         montrealBinding.ivIcon3.setImageResource(getImageDrawable(list.get(2).getWeatherStateAbbr()));
         montrealBinding.ivIcon4.setImageResource(getImageDrawable(list.get(3).getWeatherStateAbbr()));
@@ -198,7 +159,6 @@ public class LondonFragment extends Fragment{
         montrealBinding.day4.setText(getDayString(list.get(4).getDate()));
         montrealBinding.day5.setText(getDayString(list.get(5).getDate()));
 
-<<<<<<< HEAD
         montrealBinding.middle.setText(getDayString1(list.get(0).getDate()));
 
         montrealBinding.last.setText(getDayString2(""+list.get(0).getDate()));
@@ -315,13 +275,6 @@ public class LondonFragment extends Fragment{
 
 
     }
-=======
-        montrealBinding.middle.setText(getDayString1(list.get(5).getDate()));
-
-        montrealBinding.last.setText(getDayString2(""+list.get(5).getDate()));
-    }
-
->>>>>>> Rathan
 
     private String getDayString2(String date) {
 
@@ -348,10 +301,6 @@ public class LondonFragment extends Fragment{
         return ""+calendar.getDisplayName(Calendar.MONTH,Calendar.LONG,Locale.getDefault());
     }
 
-<<<<<<< HEAD
-=======
-
->>>>>>> Rathan
     private String getDayString(String date) {
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
         Calendar calendar = Calendar.getInstance();
@@ -364,11 +313,8 @@ public class LondonFragment extends Fragment{
         return calendar.getDisplayName(Calendar.DAY_OF_WEEK, Calendar.SHORT_FORMAT, Locale.getDefault());
     }
 
-<<<<<<< HEAD
 
 
-=======
->>>>>>> Rathan
     private int getImageDrawable(String abbr) {
         int resId;
         switch (abbr) {
