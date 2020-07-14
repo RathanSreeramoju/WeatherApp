@@ -354,4 +354,89 @@ public class TorontoFragment extends Fragment {
         return resId;
     }
 
+    /*
+    private void refreshUi(final List<WeatherInfo> list) {
+
+        montrealBinding.tCity.setText(list.get(0).getCityName());
+//        montrealBinding.valMinTemp.setText(String.format("%.2f", Float.valueOf(list.get(0).getMinTemp())));
+//        montrealBinding.valMaxTemp.setText(String.format("%.2f", Float.valueOf(list.get(0).getMaxTemp())));
+        //       montrealBinding.valMaxTemp.setText(String.format("%.2f", Float.valueOf(list.get(5).getMaxTemp()))+"-"+String.format("%.2f", Float.valueOf(list.get(5).getMinTemp())));
+
+        montrealBinding.valActualTemp.setText(String.format("%.2f", Float.valueOf(list.get(5).getActTemp()))+"\u2103");
+        montrealBinding.tHum.setText(String.format(getString(R.string.humidity), list.get(0).getHumidity())+"%");
+        montrealBinding.tPre.setText(String.format(getString(R.string.predictability), list.get(0).getPredictability())+"%");
+//        montrealBinding.ivIcon1.setImageResource(getImageDrawable(list.get(0).getWeatherStateAbbr()));
+        montrealBinding.tMin.setText(String.format("%.2f", Float.valueOf(list.get(0).getMinTemp())));
+        montrealBinding.tMax.setText(String.format("%.2f", Float.valueOf(list.get(0).getMaxTemp())));
+        montrealBinding.ivIcon2.setImageResource(getImageDrawable(list.get(1).getWeatherStateAbbr()));
+        montrealBinding.ivIcon3.setImageResource(getImageDrawable(list.get(2).getWeatherStateAbbr()));
+        montrealBinding.ivIcon4.setImageResource(getImageDrawable(list.get(3).getWeatherStateAbbr()));
+        montrealBinding.ivIcon5.setImageResource(getImageDrawable(list.get(4).getWeatherStateAbbr()));
+        montrealBinding.ivIcon6.setImageResource(getImageDrawable(list.get(5).getWeatherStateAbbr()));
+        montrealBinding.tvDesc1.setText(String.format(getString(R.string.test), list.get(1).getWeatherStateName()));
+        montrealBinding.tvDesc2.setText(String.format(getString(R.string.test), list.get(2).getWeatherStateName()));
+        montrealBinding.tvDesc3.setText(String.format(getString(R.string.test), list.get(3).getWeatherStateName()));
+        montrealBinding.tvDesc4.setText(String.format(getString(R.string.test), list.get(4).getWeatherStateName()));
+        montrealBinding.tvDesc5.setText(String.format(getString(R.string.test), list.get(5).getWeatherStateName() ));
+        montrealBinding.day1.setText(getDayString(list.get(1).getDate()));
+        montrealBinding.day2.setText(getDayString(list.get(2).getDate()));
+        montrealBinding.day3.setText(getDayString(list.get(3).getDate()));
+        montrealBinding.day4.setText(getDayString(list.get(4).getDate()));
+        montrealBinding.day5.setText(getDayString(list.get(5).getDate()));
+
+        montrealBinding.middle.setText(getDayString1(list.get(0).getDate()));
+
+        montrealBinding.last.setText(getDayString2(""+list.get(0).getDate()));
+        //set listener on day.
+        montrealBinding.day1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                setCommonLayout(list,context,getDayString(list.get(0).getDate()));
+
+            }
+        });
+
+        montrealBinding.day2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                setCommonLayout(list,context,getDayString(list.get(2).getDate()));
+
+
+            }
+        });
+
+        montrealBinding.day3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                setCommonLayout(list,context,getDayString(list.get(3).getDate()));
+
+
+            }
+        });
+
+        montrealBinding.day4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                setCommonLayout(list,context,getDayString(list.get(4).getDate()));
+
+
+            }
+        });
+
+        montrealBinding.day5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                setCommonLayout(list,context,getDayString(list.get(5).getDate()));
+
+
+            }
+        });
+    }
+     */
+
 }
