@@ -264,6 +264,7 @@ public class LondonFragment extends Fragment{
     private void setDataToTheLayout(List<WeatherInfo> list, int position) {
 
         layoutBinding.cityName.setText(list.get(position).getCityName());
+        layoutBinding.tDate.setText(list.get(position).getDate());
         layoutBinding.valMinTemp.setText(String.format("%.2f", Float.valueOf(list.get(position).getMinTemp())));
         layoutBinding.valMaxTemp.setText(String.format("%.2f", Float.valueOf(list.get(position).getMaxTemp())));
         layoutBinding.valActualTemp.setText(String.format("%.2f", Float.valueOf(list.get(position).getActTemp()))+"\u2103");
