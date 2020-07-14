@@ -23,19 +23,19 @@
 <!--        android:label="@string/san_francisco"-->
 <!--        tools:layout="@layout/fragment_montreal" />-->
     <fragment
-        android:id="@+id/dubaiFragment"
-        android:name="com.example.weatherapp.ui.Dubai.DubaiFragment"
-        android:label="@string/dubai"
+        android:id="@+id/vancouverFragment"
+        android:name="com.example.weatherapp.ui.Vancouver.VancouverFragment"
+        android:label="@string/vancouver"
         tools:layout="@layout/fragment_montreal" />
     <fragment
         android:id="@+id/indiaFragment"
-        android:name="com.example.weatherapp.ui.India.IndiaFragment"
-        android:label="@string/india"
+        android:name="com.example.weatherapp.ui.Indianapolis.IndianapolisFragment"
+        android:label="@string/indianapolis"
         tools:layout="@layout/fragment_montreal" />
     <fragment
-        android:id="@+id/moskowFragment"
-        android:name="com.example.weatherapp.ui.Moskow.MoskowFragment"
-        android:label="@string/moscow"
+        android:id="@+id/TorontoFragment"
+        android:name="com.example.weatherapp.ui.Toronto.TorontoFragment"
+        android:label="@string/toronto"
         tools:layout="@layout/fragment_montreal" />
     <fragment
         android:id="@+id/sanFranFragment"

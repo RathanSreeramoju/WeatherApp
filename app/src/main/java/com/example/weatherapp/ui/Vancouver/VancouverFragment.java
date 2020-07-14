@@ -1,4 +1,4 @@
-package com.example.weatherapp.ui.India;
+package com.example.weatherapp.ui.Vancouver;
 
 import android.app.Dialog;
 import android.content.Context;
@@ -40,22 +40,23 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 
-public class IndiaFragment extends Fragment {
-
+public class VancouverFragment extends Fragment {
     private Context context;
     private FragmentMontrealBinding montrealBinding;
     private Dialog dialogView;
     private ContentBinding layoutBinding;
 
 
-    public IndiaFragment() {
+
+    public VancouverFragment() {
         // Required empty public constructor
     }
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        context = getContext();
+        context=getContext();
 
     }
 
@@ -72,10 +73,10 @@ public class IndiaFragment extends Fragment {
 
     private void setRetrofit() {
         if (Constants.isNetworkAvailable(context)) {
-            GetDataService service = RetrofitClientInstance.getInstance().create(GetDataService.class);
             ProgressDialog.progressDialog.show();
+            GetDataService service = RetrofitClientInstance.getInstance().create(GetDataService.class);
 
-            Call<Example> call = service.getIndiaWeatherDetails();
+            Call<Example> call = service.getVancouverWeatherDetails();
             System.out.println("call__" + call);
             call.enqueue(new Callback<Example>() {
                 @Override

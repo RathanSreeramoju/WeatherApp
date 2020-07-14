@@ -1,4 +1,4 @@
-package com.example.weatherapp.ui.Moskow;
+package com.example.weatherapp.ui.Toronto;
 
 import android.app.Dialog;
 import android.content.Context;
@@ -40,14 +40,14 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 
-public class MoskowFragment extends Fragment {
+public class TorontoFragment extends Fragment {
 
     private Context context;
     private FragmentMontrealBinding montrealBinding;
     private Dialog dialogView;
     private ContentBinding layoutBinding;
 
-    public MoskowFragment() {
+    public TorontoFragment() {
         // Required empty public constructor
     }
 
@@ -76,7 +76,7 @@ public class MoskowFragment extends Fragment {
             ProgressDialog.progressDialog.show();
             GetDataService service = RetrofitClientInstance.getInstance().create(GetDataService.class);
 
-            Call<Example> call = service.getMoskowWeatherDetails();
+            Call<Example> call = service.getTorontoWeatherDetails();
             System.out.println("call__" + call);
             call.enqueue(new Callback<Example>() {
                 @Override

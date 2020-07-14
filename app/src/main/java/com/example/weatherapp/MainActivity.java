@@ -1,9 +1,7 @@
 package com.example.weatherapp;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.widget.Toast;
 
 import com.example.weatherapp.singletone.Constants;
 import com.example.weatherapp.singletone.ProgressDialog;
@@ -104,7 +102,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 break;
             case R.id.m_fourth:
 //                Toast.makeText(getApplicationContext(),"fourth is Clicked!",Toast.LENGTH_SHORT).show();
-                navController.navigate(R.id.dubaiFragment);
+                navController.navigate(R.id.vancouverFragment);
                 break;
             case R.id.m_fifth:
 //                Toast.makeText(getApplicationContext(),"fifth is Clicked!",Toast.LENGTH_SHORT).show();
@@ -112,7 +110,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 break;
             case R.id.m_sixth:
 //                Toast.makeText(getApplicationContext(),"sixth is Clicked!",Toast.LENGTH_SHORT).show();
-                navController.navigate(R.id.moskowFragment);
+                navController.navigate(R.id.TorontoFragment);
                 break;
 
 //                <item

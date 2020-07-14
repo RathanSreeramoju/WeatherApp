@@ -5,27 +5,27 @@
 
         <item
             android:id="@+id/m_first"
-            android:title="Montreal Fragment" />
+            android:title="Montreal " />
 
         <item
             android:id="@+id/m_second"
-            android:title="London Fragment" />
+            android:title="London " />
 
         <item
             android:id="@+id/m_third"
-            android:title="San Fragment" />
+            android:title="San Francisco" />
 
         <item
             android:id="@+id/m_fourth"
-            android:title="Dubai" />
+            android:title="Vancouver" />
 
         <item
             android:id="@+id/m_fifth"
-            android:title="India" />
+            android:title="Indianapolis" />
 
         <item
             android:id="@+id/m_sixth"
-            android:title="Moskow" />
+            android:title="Toronto" />
 
     </group>
 
