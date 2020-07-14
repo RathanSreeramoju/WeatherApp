@@ -44,4 +44,59 @@ public class SlideshowFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
     }
+
+    /*
+    private void setDataToTheLayout(List<WeatherInfo> list, int position) {
+
+        layoutBinding.cityName.setText(list.get(position).getCityName());
+        layoutBinding.tDate.setText(list.get(position).getDate());
+        layoutBinding.valMinTemp.setText(String.format("%.2f", Float.valueOf(list.get(position).getMinTemp())));
+        layoutBinding.valMaxTemp.setText(String.format("%.2f", Float.valueOf(list.get(position).getMaxTemp())));
+        layoutBinding.valActualTemp.setText(String.format("%.2f", Float.valueOf(list.get(position).getActTemp()))+"\u2103");
+
+        layoutBinding.humidity.setText(String.format(getString(R.string.airpressure), list.get(position).getAirPressure())+"%");
+        layoutBinding.predictability.setText(String.format(getString(R.string.windSpeed), list.get(position).getPredictability())+"%");
+        layoutBinding.ivIcon1.setImageResource(getImageDrawable(list.get(position).getWeatherStateAbbr()));
+
+
+
+    }
+
+    private String getDayString2(String date) {
+
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        Calendar calendar = Calendar.getInstance();
+        try {
+            Date date1 = simpleDateFormat.parse(date);
+            calendar.setTimeInMillis(date1.getTime());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return calendar.getDisplayName(Calendar.DAY_OF_WEEK, Calendar.LONG_FORMAT, Locale.getDefault());
+
+    }
+    private String getDayString1(String date) {
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        Calendar calendar = Calendar.getInstance();
+        try {
+            Date date1 = simpleDateFormat.parse(date);
+            calendar.setTimeInMillis(date1.getTime());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return ""+calendar.getDisplayName(Calendar.MONTH,Calendar.LONG,Locale.getDefault());
+    }
+
+    private String getDayString(String date) {
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        Calendar calendar = Calendar.getInstance();
+        try {
+            Date date1 = simpleDateFormat.parse(date);
+            calendar.setTimeInMillis(date1.getTime());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return calendar.getDisplayName(Calendar.DAY_OF_WEEK, Calendar.SHORT_FORMAT, Locale.getDefault());
+    }
+     */
 }
