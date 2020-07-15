@@ -168,6 +168,7 @@ public class LondonFragment extends Fragment{
             public void onClick(View view) {
 
                 setCommonLayout(list,context,getDayString(list.get(1).getDate()));
+                setDataToTheLayout(list,1);
 
             }
         });
@@ -177,6 +178,7 @@ public class LondonFragment extends Fragment{
             public void onClick(View view) {
 
                 setCommonLayout(list,context,getDayString(list.get(2).getDate()));
+                setDataToTheLayout(list,2);
 
 
             }
@@ -187,6 +189,7 @@ public class LondonFragment extends Fragment{
             public void onClick(View view) {
 
                 setCommonLayout(list,context,getDayString(list.get(3).getDate()));
+                setDataToTheLayout(list,3);
 
 
             }
@@ -197,6 +200,7 @@ public class LondonFragment extends Fragment{
             public void onClick(View view) {
 
                 setCommonLayout(list,context,getDayString(list.get(4).getDate()));
+                setDataToTheLayout(list,4);
 
 
             }
@@ -207,6 +211,7 @@ public class LondonFragment extends Fragment{
             public void onClick(View view) {
 
                 setCommonLayout(list,context,getDayString(list.get(5).getDate()));
+                setDataToTheLayout(list,5);
 
 
             }
@@ -240,26 +245,10 @@ public class LondonFragment extends Fragment{
             }
         });
 
-        cancelPopUp(list,context,dayString);
-    }
-
-    private void cancelPopUp(List<WeatherInfo> list, Context context, String dayString) {
-//        dialogView.dismiss();
-
-
-        if(dayString.equals("Tue")){
-            setDataToTheLayout(list,1);
-        }else if(dayString.equals("Wed")){
-            setDataToTheLayout(list,2);
-        }else if(dayString.equals("Thu")){
-            setDataToTheLayout(list,3);
-        }else if(dayString.equals("Fri")){
-            setDataToTheLayout(list,4);
-        }else if(dayString.equals("Sat")) {
-            setDataToTheLayout(list,5);
-        }
 
     }
+
+
 
     private void setDataToTheLayout(List<WeatherInfo> list, int position) {
 
