@@ -20,10 +20,8 @@
     <string name="toronto">Toronto</string>
     <string name="montreal">Montreal</string>
 
-<!--    <string name="test">%1$s\n%2$s</string>-->
+    <!--    <string name="test">%1$s\n%2$s</string>-->
     <string name="test">%1$s</string>
-
-
 
 
     <!-- TODO: Remove or change this placeholder text -->
